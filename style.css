@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    display:flex;
+    justify-content: center;
+    gap:10px;
+    
+
+}
+.game-window {
+    border: 1px solid black;
+    width:500px;
+    height: 500px;
+    box-shadow: 8px 7px 0px 3px #020202;
+}
+
+.button-container {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:5px;
+
+}
+
+button {
+    height:50px;
+    border: 1px solid black;
+    background-color:white;
+    box-shadow: 3px 3px 0px 3px #020202
+}

@@ -1,5 +1,13 @@
 let playerScore = 0;
 let computerScore = 0;
+const buttons = document.querySelectorAll("button")
+
+buttons.forEach(
+  (button)=>
+  {
+    button.addEventListener("click",playRound)
+  }
+)
 
 function getComputerChoice() {
   const avaiableChoices = ["rock", "paper", "scissors"];
@@ -7,8 +15,9 @@ function getComputerChoice() {
   return avaiableChoices[randomNum];
 }
 
-function playRound() {
-  let playerSelection = prompt("Rock, paper or scissors?").toLowerCase();
+function playRound(e) {
+  let playerSelection = e.target.dataset.choice;
+  console.log("player choice is "+playerSelection)
   if (!["rock", "paper", "scissors"].includes(playerSelection)) {
     return `invalid choice`;
   }
