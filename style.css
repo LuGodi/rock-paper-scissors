@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@300&display=swap');
+
 * {
     box-sizing: border-box;
+    font-family: sans-serif;
+
 }
 
 .container {
@@ -12,8 +16,19 @@
 .game-window {
     border: 1px solid black;
     width:500px;
-    height: 500px;
+    height: 300px;
+    overflow:scroll;
     box-shadow: 8px 7px 0px 3px #020202;
+    background-color: white;
+}
+
+.information {
+    margin:5px;
+    margin-top:10px;
+    color: black;
+    font-family: 'Handjet', cursive;
+    font-size: 20px;
+    border-bottom: black solid 1px;
 }
 
 .button-container {
@@ -29,4 +44,8 @@ button {
     border: 1px solid black;
     background-color:white;
     box-shadow: 3px 3px 0px 3px #020202
+}
+
+.button-clear{
+    margin-top:auto
 }

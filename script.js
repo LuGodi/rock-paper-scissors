@@ -1,11 +1,12 @@
 let playerScore = 0;
 let computerScore = 0;
-const buttons = document.querySelectorAll("button")
+const buttons = document.querySelectorAll(".button-selection")
+const gameWindow = document.querySelector(".game-window")
 
 buttons.forEach(
   (button)=>
   {
-    button.addEventListener("click",playRound)
+    button.addEventListener("click",game)
   }
 )
 
@@ -28,6 +29,7 @@ function playRound(e) {
 function checkWinningCondition(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     console.log(`Draw! Both players chose ${playerSelection}`);
+    displayMsg(`Draw! Both players chose ${playerSelection}`)
     return;
   } else if (
     (playerSelection === "rock" && computerSelection === "scissors") ||
@@ -37,10 +39,16 @@ function checkWinningCondition(playerSelection, computerSelection) {
     console.log(
       `You win! You picked ${playerSelection} which beats ${computerSelection}`
     );
+    displayMsg(
+      `You win! You picked ${playerSelection} which beats ${computerSelection}`
+    );
     playerScore++;
     return;
   } else {
     console.log(
+      `You lost! You picked ${playerSelection} which loses to ${computerSelection}`
+    );
+    displayMsg(
       `You lost! You picked ${playerSelection} which loses to ${computerSelection}`
     );
     computerScore++;
@@ -48,12 +56,12 @@ function checkWinningCondition(playerSelection, computerSelection) {
   }
 }
 
-function game() {
+function game(e) {
   playerScore = 0;
   computerScore = 0;
   for (let i = 0; i < 5; i++) {
     console.log(`Round ${i + 1}:`);
-    playRound();
+    playRound(e);
   }
   console.log(
     `--- Final score -----
@@ -69,4 +77,14 @@ function game() {
     }`
   );
   //add scores
+}
+
+
+function displayMsg(msg)
+{
+  let para = document.createElement("p")
+  para.classList.add("information")
+  para.textContent = `> ${msg}`
+  gameWindow.appendChild(para)
+
 }
