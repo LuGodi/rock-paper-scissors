@@ -1,15 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@300;400&display=swap');
 * {
     box-sizing: border-box;
     font-family: sans-serif;
 
 }
 
+
 .container {
     display:flex;
     justify-content: center;
     gap:10px;
+    margin-top:25px;
     
 
 }
@@ -17,7 +18,7 @@
     border: 1px solid black;
     width:500px;
     height: 300px;
-    overflow:scroll;
+    overflow:auto;
     box-shadow: 8px 7px 0px 3px #020202;
     background-color: white;
 }
@@ -27,7 +28,7 @@
     margin-top:10px;
     color: black;
     font-family: 'Handjet', cursive;
-    font-size: 20px;
+    font-size: 23px;
     border-bottom: black solid 1px;
 }
 
@@ -61,6 +62,7 @@ button {
     box-shadow: 3px 3px 0px 3px #020202;
     user-select: none;
     cursor: pointer;
+    font-family: 'Handjet',monospace;
     
 }
 
