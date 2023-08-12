@@ -1,17 +1,19 @@
 let playerScore = 0;
 let computerScore = 0;
-let roundsPlayed = 0
+let roundsPlayed = 0;
+let darkModeFlag = false
 const buttons = document.querySelectorAll(".button-selection")
 const gameWindow = document.querySelector(".game-window")
 const clearButton = document.querySelector(".button-clear")
 const newGameButton = document.querySelector(".button-new-game")
+const nightModeButton = document.querySelector(".night-mode-button")
 buttons.forEach(
   (button)=>
   {
     button.addEventListener("click",game)
   }
 )
-
+nightModeButton.addEventListener("click",goDark)
 clearButton.addEventListener("click",cleanLog)
 newGameButton.addEventListener("click",startNewGame)
 
@@ -110,4 +112,13 @@ function startNewGame(e){
   if (e) {
     cleanLog()
   }
+}
+
+function goDark(e) {
+  darkModeFlag = darkModeFlag === true ? false : true
+  document.body.style.backgroundColor = darkModeFlag ? "#121212" : "white"
+
+  gameWindow.classList.toggle("dark")
+  const allButtons = document.querySelectorAll("button")
+  allButtons.forEach(button=>button.classList.toggle("dark"))
 }

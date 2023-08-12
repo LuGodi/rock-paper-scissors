@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Handjet:wght@300;400&display=swap');
+:root {
+    --main-bg-color: white;
+    --main-secundary-color:black;
+    --main-shadow-color:#020202
+}
+
 * {
     box-sizing: border-box;
     font-family: sans-serif;
@@ -14,39 +20,34 @@
     
 
 }
+.header {
+}
 .game-window {
-    border: 1px solid black;
+    border: 1px solid var(--main-secundary-color);
     width:500px;
     height: 300px;
     overflow:auto;
-    box-shadow: 8px 7px 0px 3px #020202;
-    background-color: white;
+    box-shadow: 8px 7px 0px 3px var(--main-shadow-color);
+    background-color: var(--main-bg-color);
 }
 
 .information {
     margin:5px;
     margin-top:10px;
-    color: black;
     font-family: 'Handjet', cursive;
     font-size: 23px;
-    border-bottom: black solid 1px;
+    border-bottom: solid 1px;
 }
 
 .score {
     margin:5px;
     margin-top:10px;
-    color: black;
     font-family: 'Handjet', cursive;
     font-size: 20px;
     text-align: center;
     
 }
-.score:first-child{
-    color:Darkred;
-}
-.score:last-child{
-    border-bottom:blac solid 3px;
-}
+
 .button-container {
     display:flex;
     flex-direction: column;
@@ -57,9 +58,9 @@
 
 button {
     height:50px;
-    border: 1px solid black;
-    background-color:white;
-    box-shadow: 3px 3px 0px 3px #020202;
+    border: 1px solid var(--main-secundary-color);
+    background-color:var(--main-bg-color);
+    box-shadow: 3px 3px 0px 3px var(--main-shadow-color);
     user-select: none;
     cursor: pointer;
     font-family: 'Handjet',monospace;
@@ -71,3 +72,14 @@ button {
     margin-top:auto
 }
 
+.dark {
+    background-color: #121212;
+    box-shadow: 8px 7px 0px 3px  white;
+    color:white;
+    border-color:white;
+}
+
+button.dark {
+    box-shadow: 3px 3px 0px 3px white;
+
+}
