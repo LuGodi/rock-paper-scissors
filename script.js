@@ -54,8 +54,8 @@ function checkWinningCondition(playerSelection, computerSelection) {
 
 function game(e) {
   playRound(e)
-  roundsPlayed += 1
-  if (roundsPlayed === 5)
+  
+  if (computerScore === 5 || playerScore === 5)
   {
     displayScore()
     startNewGame()
@@ -73,6 +73,7 @@ function displayMsg(msg)
   para.classList.add("information")
   para.textContent = `> ${msg}`
   gameWindow.appendChild(para)
+  para.scrollIntoView()
 
 }
 
@@ -84,9 +85,8 @@ function cleanLog(e) {
 
 function displayScore() {
   let result = playerScore > computerScore ? `You won with ${playerScore} points`
-              : playerScore < computerScore
-              ? `Computer won with ${computerScore} points`
-              : `Draw`
+              : `Computer won with ${computerScore} points`
+             
 
   let para = document.createElement("p")
   let para2 = document.createElement("p")
@@ -101,6 +101,7 @@ function displayScore() {
   para2.textContent = `Player: ${playerScore}, Computer: ${computerScore}`
   para3.textContent = `${result}`
   gameWindow.append(para,para2,para3)
+  para3.scrollIntoView()
 }
 function startNewGame(e){
   roundsPlayed = 0;
